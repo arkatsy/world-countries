@@ -11,7 +11,9 @@ const fetcher = async (endpoint: string) => {
 
 export const API = {
   fetchAllCountries: () =>
-    fetcher(`/all?fields=name,region,population,flags`) as Promise<Country[]>,
+    fetcher(`/all?fields=name,region,population,flags,capital`) as Promise<
+      Country[]
+    >,
   fetchCountryDetails: (name: string) =>
     fetcher(
       `/name/${name}?fields=name,subregion,region,capital,flags,tld,currencies,languages,borders,population`,
